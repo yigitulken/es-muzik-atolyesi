@@ -12,10 +12,10 @@ const quickLinks = [
 ]
 
 const services = [
-  { name: "Piyano Bakım ve Akort", href: "/hizmetler/piyano" },
-  { name: "Yaylı Enstrümanlar", href: "/hizmetler/yayli" },
-  { name: "Gitar Bakım ve Ayar", href: "/hizmetler/gitar" },
-  { name: "Detaylı Kontrol", href: "/hizmetler/detayli-kontrol" },
+  { name: "Piyano Bakım ve Akort", href: "/hizmetler#piyano" },
+  { name: "Yaylı Enstrümanlar", href: "/hizmetler#yayli" },
+  { name: "Arşe Kıl Değişimi", href: "/hizmetler#arse" },
+  { name: "Gitar Bakım ve Ayar", href: "/hizmetler#gitar" },
 ]
 
 export function Footer() {
@@ -28,23 +28,23 @@ export function Footer() {
             <Link href="/" className="mb-4 inline-block">
               <Image
                 src="/atolye_logo.png"
-                alt="ES Atölye Logo"
+                alt="ES Müzik Atölyesi Logo"
                 width={120}
                 height={60}
                 className="h-12 w-auto"
               />
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-              Piyano, yaylı enstrümanlar ve gitar için bakım, onarım ve akort hizmetleri.
+              Piyano, yaylı çalgılar, arşe ve gitar için bakım, onarım, akort ve teknik destek hizmetleri.
             </p>
             <a
-              href="https://instagram.com/esatolye"
+              href="https://www.instagram.com/esmuzikatolye/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <Instagram className="size-5" />
-              @esatolye
+              @esmuzikatolye
             </a>
           </div>
 
@@ -94,16 +94,16 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+905551234567"
+                  href="tel:+905058900477"
                   className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Phone className="size-4" />
-                  +90 555 123 45 67
+                  +90 505 890 04 77
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/905551234567"
+                  href="https://wa.me/905058900477"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -113,10 +113,15 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="flex items-start gap-2 text-sm text-muted-foreground">
+                <a
+                  href="https://maps.google.com/?q=Kılıçreis+Mah.+320/1+Sk.+No:32+Konak+İzmir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
                   <MapPin className="mt-0.5 size-4 shrink-0" />
-                  İstanbul, Türkiye
-                </span>
+                  Kılıçreis Mah. 320/1 Sk. No:32 Konak/İzmir
+                </a>
               </li>
               <li>
                 <span className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -131,7 +136,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 border-t border-border pt-6">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} ES Atölye. Tüm hakları saklıdır.
+            &copy; {new Date().getFullYear()} ES Müzik Atölyesi. Tüm hakları saklıdır.
           </p>
         </div>
       </div>

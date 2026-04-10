@@ -17,8 +17,19 @@ import {
 import { PhotoDropzone } from "@/components/photo-dropzone"
 import { usePhotoUpload } from "@/hooks/use-photo-upload"
 import { instrumentTypes, instrumentTypeLabels } from "@/lib/validations/submission"
-import { Phone, MessageCircle, MapPin, Clock, Instagram, Mail, Send, Loader2, CheckCircle2 } from "lucide-react"
+import { Phone, MessageCircle, MapPin, Clock, Instagram, Send, Loader2, CheckCircle2 } from "lucide-react"
 import { toast } from "sonner"
+
+const PHONE_DISPLAY = "+90 505 890 04 77"
+const PHONE_TEL = "+905058900477"
+const PHONE_WA = "905058900477"
+const ADDRESS_LINE_1 = "Kılıçreis Mah. 320/1 Sk. No:32"
+const ADDRESS_LINE_2 = "Konak / İzmir"
+const ADDRESS_QUERY = "Kılıçreis Mah. 320/1 Sk. No:32 Konak İzmir"
+const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_QUERY)}`
+const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS_QUERY)}&t=&z=16&ie=UTF8&iwloc=&output=embed`
+const INSTAGRAM_URL = "https://www.instagram.com/esmuzikatolye/"
+const INSTAGRAM_HANDLE = "@esmuzikatolye"
 
 export default function IletisimPage() {
   const [name, setName] = useState("")
@@ -53,14 +64,14 @@ export default function IletisimPage() {
 
       if (!res.ok) {
         const data = await res.json()
-        throw new Error(data.error || "Gonderim basarisiz")
+        throw new Error(data.error || "Gönderim başarısız oldu")
       }
 
       setSuccess(true)
-      toast.success("Mesajiniz basariyla gonderildi!")
+      toast.success("Mesajınız başarıyla gönderildi!")
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : "Bir hata olustu. Tekrar deneyin."
+        err instanceof Error ? err.message : "Bir hata oluştu. Lütfen tekrar deneyin."
       )
     } finally {
       setSubmitting(false)
@@ -86,11 +97,11 @@ export default function IletisimPage() {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Iletisim
+                İletişim
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Enstrumaninizla ilgili sorulariniz icin bize ulasin. Fotograf ve kisa aciklama ile
-                WhatsApp uzerinden hizlica ilk degerlendirme alabilirsiniz.
+                Enstrümanınızla ilgili sorularınız için bize ulaşın. Fotoğraf ve kısa açıklama ile
+                WhatsApp üzerinden hızlıca ön değerlendirme alabilirsiniz.
               </p>
             </div>
           </div>
@@ -105,10 +116,10 @@ export default function IletisimPage() {
                 <div className="space-y-8">
                   <div>
                     <h2 className="font-serif text-2xl font-semibold text-foreground">
-                      Bize Ulasin
+                      Bize Ulaşın
                     </h2>
                     <p className="mt-2 text-muted-foreground">
-                      En hizli yanit icin WhatsApp tercih edilebilir.
+                      En hızlı yanıt için WhatsApp tercih edilebilir.
                     </p>
                   </div>
 
@@ -122,10 +133,10 @@ export default function IletisimPage() {
                         <div>
                           <h3 className="font-semibold text-foreground">WhatsApp</h3>
                           <p className="mt-1 text-muted-foreground">
-                            Fotograf gondererek hizlica on degerlendirme alin
+                            Fotoğraf göndererek hızlıca ön değerlendirme alın.
                           </p>
                           <Button className="mt-3 gap-2" size="sm" asChild>
-                            <a href="https://wa.me/905551234567" target="_blank" rel="noopener noreferrer">
+                            <a href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer">
                               <MessageCircle className="size-4" />
                               WhatsApp&apos;tan Yaz
                             </a>
@@ -142,26 +153,10 @@ export default function IletisimPage() {
                       <div>
                         <h3 className="font-semibold text-foreground">Telefon</h3>
                         <a
-                          href="tel:+905551234567"
+                          href={`tel:${PHONE_TEL}`}
                           className="mt-1 block text-muted-foreground hover:text-foreground"
                         >
-                          +90 555 123 45 67
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Email */}
-                    <div className="flex items-start gap-4">
-                      <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary">
-                        <Mail className="size-5 text-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground">E-posta</h3>
-                        <a
-                          href="mailto:info@esatolye.com"
-                          className="mt-1 block text-muted-foreground hover:text-foreground"
-                        >
-                          info@esatolye.com
+                          {PHONE_DISPLAY}
                         </a>
                       </div>
                     </div>
@@ -173,10 +168,16 @@ export default function IletisimPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground">Adres</h3>
-                        <p className="mt-1 text-muted-foreground">
-                          Ornek Mahallesi, Atolye Sokak No: 12<br />
-                          Kadikoy, Istanbul
-                        </p>
+                        <a
+                          href={MAPS_LINK}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 block text-muted-foreground hover:text-foreground"
+                        >
+                          {ADDRESS_LINE_1}
+                          <br />
+                          {ADDRESS_LINE_2}
+                        </a>
                       </div>
                     </div>
 
@@ -186,11 +187,10 @@ export default function IletisimPage() {
                         <Clock className="size-5 text-foreground" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground">Calisma Saatleri</h3>
+                        <h3 className="font-semibold text-foreground">Çalışma Saatleri</h3>
                         <div className="mt-1 space-y-1 text-muted-foreground">
-                          <p>Pazartesi - Cuma: 09:00 - 18:00</p>
-                          <p>Cumartesi: 10:00 - 15:00</p>
-                          <p>Pazar: Kapali</p>
+                          <p>Pazartesi - Cumartesi: 10:00 - 19:00</p>
+                          <p>Pazar: Kapalı</p>
                         </div>
                       </div>
                     </div>
@@ -203,12 +203,12 @@ export default function IletisimPage() {
                       <div>
                         <h3 className="font-semibold text-foreground">Instagram</h3>
                         <a
-                          href="https://instagram.com/esatolye"
+                          href={INSTAGRAM_URL}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="mt-1 block text-muted-foreground hover:text-foreground"
                         >
-                          @esatolye
+                          {INSTAGRAM_HANDLE}
                         </a>
                       </div>
                     </div>
@@ -218,9 +218,9 @@ export default function IletisimPage() {
                 {/* Contact Form */}
                 <Card className="border-border/50">
                   <CardHeader>
-                    <CardTitle className="font-serif text-2xl">Mesaj Gonderin</CardTitle>
+                    <CardTitle className="font-serif text-2xl">Mesaj Gönderin</CardTitle>
                     <CardDescription>
-                      Formu doldurarak bize ulasabilirsiniz. En kisa surede yanit verecegiz.
+                      Formu doldurarak bize ulaşabilirsiniz. En kısa sürede yanıt vereceğiz.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -228,13 +228,13 @@ export default function IletisimPage() {
                       <div className="flex flex-col items-center py-8 text-center">
                         <CheckCircle2 className="mb-4 size-16 text-green-500" />
                         <h3 className="font-serif text-xl font-semibold">
-                          Mesajiniz Gonderildi!
+                          Mesajınız Gönderildi!
                         </h3>
                         <p className="mt-2 text-muted-foreground">
-                          En kisa surede sizinle iletisime gececegiz.
+                          En kısa sürede sizinle iletişime geçeceğiz.
                         </p>
                         <Button variant="outline" className="mt-6" onClick={handleReset}>
-                          Yeni Mesaj Gonder
+                          Yeni Mesaj Gönder
                         </Button>
                       </div>
                     ) : (
@@ -246,7 +246,7 @@ export default function IletisimPage() {
                             </label>
                             <Input
                               id="name"
-                              placeholder="Adiniz"
+                              placeholder="Adınız"
                               value={name}
                               onChange={(e) => setName(e.target.value)}
                               required
@@ -286,11 +286,11 @@ export default function IletisimPage() {
 
                         <div className="space-y-2">
                           <label className="text-sm font-medium text-foreground">
-                            Enstruman Turu *
+                            Enstrüman Türü *
                           </label>
                           <Select value={instrumentType} onValueChange={setInstrumentType} disabled={submitting}>
                             <SelectTrigger className="w-full">
-                              <SelectValue placeholder="Enstruman turunu secin" />
+                              <SelectValue placeholder="Enstrüman türünü seçin" />
                             </SelectTrigger>
                             <SelectContent>
                               {instrumentTypes.map((type) => (
@@ -304,11 +304,11 @@ export default function IletisimPage() {
 
                         <div className="space-y-2">
                           <label htmlFor="message" className="text-sm font-medium text-foreground">
-                            Mesajiniz *
+                            Mesajınız *
                           </label>
                           <Textarea
                             id="message"
-                            placeholder="Enstrumaninizla ilgili sorunu veya ihtiyacinizi kisaca aciklayin..."
+                            placeholder="Enstrümanınızla ilgili sorunu veya ihtiyacınızı kısaca açıklayın..."
                             rows={4}
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
@@ -320,7 +320,7 @@ export default function IletisimPage() {
                         {/* Photo Upload */}
                         <div className="space-y-2">
                           <label className="text-sm font-medium text-foreground">
-                            Fotograflar (istege bagli)
+                            Fotoğraflar (isteğe bağlı)
                           </label>
                           <PhotoDropzone
                             photos={photos}
@@ -340,7 +340,7 @@ export default function IletisimPage() {
                           ) : (
                             <Send className="size-4" />
                           )}
-                          Gonder
+                          Gönder
                         </Button>
                       </form>
                     )}
@@ -351,15 +351,19 @@ export default function IletisimPage() {
           </div>
         </section>
 
-        {/* Map Section Placeholder */}
+        {/* Map Section */}
         <section className="border-t border-border">
           <div className="aspect-[21/9] w-full bg-muted">
-            <div className="flex size-full items-center justify-center">
-              <div className="text-center">
-                <MapPin className="mx-auto size-12 text-muted-foreground/30" />
-                <p className="mt-2 text-muted-foreground">Harita burada goruntulecek</p>
-              </div>
-            </div>
+            <iframe
+              src={MAPS_EMBED}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="ES Müzik Atölyesi konumu"
+              className="size-full"
+            />
           </div>
         </section>
       </main>

@@ -10,7 +10,7 @@ interface PhotoUploadButtonProps extends Omit<ButtonProps, "onClick"> {
 }
 
 export function PhotoUploadButton({
-  label = "Fotograf Gonder",
+  label = "Fotoğraf Gönder",
   showIcon = true,
   children,
   ...props

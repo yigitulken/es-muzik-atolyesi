@@ -3,28 +3,28 @@ import { ArrowRight } from "lucide-react"
 
 const services = [
   {
-    title: "Piyano Bakım, Onarım ve Akort",
-    description: "Akustik piyanolar için akort, mekanik kontrol, tuşe ve pedal sistemi kontrolleri, genel bakım ve gerekli onarımlar.",
+    title: "Piyano, Akort, Mekanik Tamir ve Tel Değişimi",
+    description: "Akustik piyanolar için akort, mekanik ayar, tuş regülasyonu, kopmuş tel değişimi ve bas tellerde özel tel sarımı.",
     image: "/uploads/hizmet-piyano.jpg",
-    href: "/hizmetler/piyano",
+    href: "/hizmetler#piyano",
   },
   {
     title: "Keman, Viyola ve Viyolonsel Hizmetleri",
-    description: "Yaylı enstrümanlarda eşik, köprü, tel düzeni, burgular, gövde kontrolü ve genel bakım işlemleri.",
+    description: "Yaylı enstrümanlarda köprü, eşik, ses direği ve burgu ayarları; tel düzeni, gövde kontrolü ve çatlak onarımı.",
     image: "/uploads/hizmet-yayli.jpg",
-    href: "/hizmetler/yayli",
+    href: "/hizmetler#yayli",
   },
   {
-    title: "Gitar Bakım, Ayar ve Onarım",
-    description: "Sap ayarı, tel yüksekliği, entonasyon, fret sorunları, donanım ve elektronik kontroller, genel temizlik ve bakım.",
+    title: "Arşe, Kıl Değişimi ve Tamiri",
+    description: "Arşe için kıl değişimi, doğru gerginlik ve dengeli kıl dağılımı; kırık ve yıpranmış arşelerde tamir işlemleri.",
+    image: "/uploads/hero-arse-kil-degisimi.jpg",
+    href: "/hizmetler#arse",
+  },
+  {
+    title: "Gitar Tamiri, Onarım ve Bakım",
+    description: "Perde düzenleme, sap ve çatlak onarımı, elektronik bakım ve komple setup ile gitarlarınızı ilk günkü haline kavuşturuyoruz.",
     image: "/uploads/hizmet-gitar.jpg",
-    href: "/hizmetler/gitar",
-  },
-  {
-    title: "Detaylı Kontrol ve Hassas Müdahale",
-    description: "Sorun tespiti, ayar, parça değişimi ve enstrümanın kullanım konforunu geri kazandırmaya yönelik işlemler.",
-    image: "/uploads/hizmet-detayli-kontrol.jpg",
-    href: "/hizmetler/detayli-kontrol",
+    href: "/hizmetler#gitar",
   },
 ]
 

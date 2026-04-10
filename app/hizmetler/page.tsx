@@ -2,59 +2,90 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Music, Guitar, Piano, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Music, Guitar, Piano, Music2, ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Hizmetler | ES Atölye",
-  description: "Piyano bakım ve akort, yaylı enstrüman onarım, gitar bakım ve ayar hizmetleri. Her enstrümana özel teknik yaklaşım.",
+  title: "Hizmetler | ES Müzik Atölyesi",
+  description: "Piyano akort ve mekanik tamir, yaylı çalgı onarımı, arşe kıl değişimi, gitar bakım ve onarım hizmetleri. Her enstrümana özel teknik yaklaşım.",
 }
 
 const services = [
   {
     id: "piyano",
     icon: Piano,
-    title: "Piyano Bakım, Onarım ve Akort",
-    description: "Akustik piyanolar için akort, mekanik kontrol, tuşe ve pedal sistemi kontrolleri, genel bakım ve gerekli onarımlar.",
+    label: "Piyano",
+    title: "Piyano, Akort, Mekanik Tamir ve Tel Değişimi",
+    description:
+      "Akustik piyanolarınız için profesyonel akort, mekanik ayar, tuş regülasyonu ve ses düzenleme işlemlerini titizlikle gerçekleştiriyoruz. Kopmuş veya yıpranmış tellerin değişimi, bas tellerde özel tel sarımı ve hassas tel takma işlemleriyle piyanonuzun ses dengesini en doğru şekilde yeniden kuruyoruz.",
     details: [
       "Akort ve ton dengeleme",
-      "Mekanik sistem kontrolü ve bakımı",
-      "Tuşe temizliği ve ayarı",
-      "Pedal sistemi kontrolü",
-      "Çekiç ve keçe bakımı",
-      "Genel temizlik ve koruma",
+      "Mekanik ayar ve reglaj",
+      "Tuş regülasyonu",
+      "Tuş keçe bakımı",
+      "Çekiç ve mekanik parça bakımı",
+      "Kopmuş tel değişimi",
+      "Bas tellerde özel tel sarımı",
+      "Oktavlar arası ses dengesi",
     ],
-    image: "/images/piano-service.jpg",
+    image: "/uploads/hizmet-piyano.jpg",
   },
   {
     id: "yayli",
     icon: Music,
+    label: "Yaylı Çalgılar",
     title: "Keman, Viyola ve Viyolonsel Hizmetleri",
-    description: "Yaylı enstrümanlarda eşik, köprü, tel düzeni, burgular, gövde kontrolü ve genel bakım işlemleri.",
+    description:
+      "Keman, viyola ve viyolonsel başta olmak üzere tüm yaylı çalgılarınız için köprü, eşik, ses direği ve burgu ayarlarını; tel düzeni, gövde kontrolü ve çatlak onarımlarını özenle yapıyoruz. Her enstrümanın karakterini koruyarak çalım rahatlığını ve ses dengesini geri kazandırıyoruz.",
     details: [
       "Köprü ayarı ve değişimi",
       "Eşik kontrolü ve bakımı",
+      "Ses direği ayarı",
       "Burgu değişimi ve ayarı",
       "Tel değişimi ve düzeni",
-      "Gövde kontrol ve onarım",
-      "Ses direği ayarı",
+      "Gövde çatlak onarımı",
+      "Genel kontrol ve bakım",
     ],
-    image: "/images/violin-service.jpg",
+    image: "/uploads/hizmet-yayli.jpg",
+  },
+  {
+    id: "arse",
+    icon: Music2,
+    label: "Arşe",
+    title: "Arşe, Kıl Değişimi ve Tamiri",
+    description:
+      "Arşeleriniz için kıl değişimi ve tamir hizmeti veriyoruz. Doğru gerginlik ve dengeli kıl dağılımıyla arşenizin performansını en üst seviyeye taşıyoruz. Kırık ya da yıpranmış arşelerinizde gereken müdahaleleri yaparak yeniden güvenle kullanılabilir hale getiriyoruz.",
+    details: [
+      "Kıl değişimi",
+      "Doğru gerginlik ayarı",
+      "Dengeli kıl dağılımı",
+      "Arşe tamiri",
+      "Kırık arşe onarımı",
+      "Genel arşe bakımı",
+    ],
+    image: "/uploads/hero-arse-kil-degisimi.jpg",
   },
   {
     id: "gitar",
     icon: Guitar,
-    title: "Gitar Bakım, Ayar ve Onarım",
-    description: "Sap ayarı, tel yüksekliği, entonasyon, fret sorunları, donanım ve elektronik kontroller, genel temizlik ve bakım.",
+    label: "Gitar",
+    title: "Gitar Tamiri, Onarım ve Bakım",
+    description:
+      "Klasik, akustik ve elektro gitarlarınız için perde düzenleme, perde değişimi, eşik ayarı, sap düzeltme, truss rod ayarı ve komple setup hizmetleri veriyoruz. Kırık sap onarımı, çatlak tamiri, açılmış birleşim noktalarının yeniden yapıştırılması ve cila rötuşlarıyla en zorlu hasarları bile özenle gideriyoruz. Elektronik bakım kapsamında manyetik değişimi, potansiyometre ve jack onarımı, kablo lehimleme ile gitarınızın sesini ve çalınabilirliğini ilk günkü haline kavuşturuyoruz.",
     details: [
-      "Sap ayarı (truss rod)",
-      "Tel yüksekliği (aksiyon) ayarı",
+      "Perde düzenleme ve fret tesviyesi",
+      "Perde değişimi",
+      "Eşik ayarı ve tel aksiyonu",
+      "Sap düzeltme ve truss rod ayarı",
       "Entonasyon düzeltme",
-      "Fret seviyeleme ve parlatma",
-      "Elektronik kontrol ve onarım",
-      "Donanım bakımı ve değişimi",
+      "Kırık sap ve çatlak onarımı",
+      "Birleşim noktası yapıştırma",
+      "Cila rötuşları",
+      "Manyetik, pot ve jack değişimi",
+      "Kablo lehimleme ve elektronik bakım",
+      "Komple setup",
     ],
-    image: "/images/guitar-service.jpg",
+    image: "/uploads/hizmet-gitar.jpg",
   },
 ]
 
@@ -90,8 +121,9 @@ export default function HizmetlerPage() {
                 Hizmet Alanlarımız
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Her enstrüman farklı bir yaklaşım ister. ES Atölye&apos;de bakım, onarım ve akort süreçleri, 
-                enstrümanın yapısına uygun teknik hassasiyetle ele alınır.
+                Her enstrüman farklı bir yaklaşım ister. ES Müzik Atölyesi&apos;nde piyano, yaylı çalgılar,
+                arşe ve gitar üzerine bakım, onarım, akort ve teknik destek hizmetleri; enstrümanın
+                yapısına uygun teknik hassasiyetle ele alınır.
               </p>
             </div>
           </div>
@@ -102,27 +134,28 @@ export default function HizmetlerPage() {
           <div className="container mx-auto px-4">
             <div className="space-y-16 lg:space-y-24">
               {services.map((service, index) => (
-                <div 
+                <div
                   key={service.id}
                   id={service.id}
-                  className={`flex flex-col gap-8 lg:gap-16 ${
+                  className={`scroll-mt-24 flex flex-col gap-8 lg:gap-16 ${
                     index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
                   } lg:items-center`}
                 >
                   {/* Image */}
                   <div className="flex-1">
                     <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
-                      <div className="flex size-full items-center justify-center bg-secondary/50">
-                        <service.icon className="size-24 text-muted-foreground/30" />
-                      </div>
+                      <div
+                        className="size-full bg-cover bg-center transition-transform duration-500 hover:scale-105"
+                        style={{ backgroundImage: `url('${service.image}')` }}
+                      />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1 space-y-6">
                     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5">
                       <service.icon className="size-4 text-primary" />
-                      <span className="text-sm font-medium text-primary">Hizmet</span>
+                      <span className="text-sm font-medium text-primary">{service.label}</span>
                     </div>
                     
                     <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground lg:text-4xl">

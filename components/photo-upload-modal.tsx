@@ -126,7 +126,7 @@ export function PhotoUploadModal({ open, onOpenChange }: PhotoUploadModalProps) 
       <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="font-serif text-xl">
-            Fotograf Gonder
+            Fotoğraf Gönder
           </DialogTitle>
           <DialogDescription>
             Enstrumaninizin fotograflarini yukleyin ve sorunu kisaca aciklayin.

@@ -114,7 +114,7 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <PhotoUploadButton size="lg" className="gap-2 bg-primary hover:bg-primary/90" label="Fotograf Gondererek Sor" />
+              <PhotoUploadButton size="lg" className="gap-2 bg-primary hover:bg-primary/90" label="Fotoğraf Göndererek Sorun" />
               <Button asChild variant="outline" size="lg" className="gap-2 group">
                 <Link href="/hizmetler">
                   Hizmetleri İncele

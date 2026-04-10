@@ -30,10 +30,10 @@ export function AboutSection() {
           {/* Content */}
           <div className="flex flex-col gap-6">
             <h2 className="font-serif text-3xl font-semibold text-foreground md:text-4xl">
-              Lutier | Sonat Tufan
+              Lüthiyer | Sonat Tufan
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              ES Atölye, enstrüman bakım, onarım ve akort süreçlerine özenli ve dikkatli yaklaşan bir atölyedir. Piyano, yaylı enstrümanlar ve gitar gibi farklı yapıya sahip enstrümanlarda, her birinin ihtiyaç duyduğu teknik hassasiyet dikkate alınarak çalışılır. Buradaki yaklaşım yalnızca müdahale etmek değil; enstrümanın karakterini, kullanım konforunu ve güvenilirliğini koruyarak doğru sonucu sunmaktır.
+              1996’dan bu yana müzik, enstrüman bakımı ve onarımı alanında eğitim alan Sonat Tufan; farklı atölyelerde, usta lüthiyerlerle ve akademik isimlerle çalışarak piyano, gitar ve yaylı çalgılar üzerine uzmanlaştı. İzmir Devlet Opera ve Balesi’ndeki çalışmalarının ardından edindiği tüm birikimi ES Müzik Atölyesi çatısı altında bir araya getirdi.
             </p>
 
             {/* Values */}
