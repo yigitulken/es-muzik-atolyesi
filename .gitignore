@@ -10,8 +10,8 @@ next.user-config.*
 # Environment variables
 .env*.local
 
-# Uploads (dev only)
-public/uploads/
+# Uploads - user submitted (dev only)
+public/uploads/*.png
 
 # Common ignores
 node_modules
