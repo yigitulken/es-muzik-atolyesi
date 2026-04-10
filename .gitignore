@@ -12,6 +12,9 @@ next.user-config.*
 
 # Uploads - user submitted (dev only)
 public/uploads/*.png
+# Site assets (keep tracked)
+!public/uploads/about-*.png
+!public/uploads/ornek-*.png
 
 # Common ignores
 node_modules

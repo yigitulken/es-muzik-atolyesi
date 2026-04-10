@@ -6,17 +6,22 @@ const examples = [
   {
     category: "Piyano",
     description: "Akort dengesizliği ve genel mekanik kontrol sonrası daha dengeli ve güvenilir kullanım sağlandı.",
-    image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+    image: "/uploads/ornek-piyano.png",
   },
   {
     category: "Keman",
     description: "Köprü ve genel ayar müdahalesiyle çalım dengesi iyileştirildi.",
-    image: "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=2070&auto=format&fit=crop",
+    image: "/uploads/ornek-keman.png",
   },
   {
     category: "Gitar",
     description: "Sap ayarı, fret kontrolü ve entonasyon işlemleri sonrası daha temiz ve rahat çalım elde edildi.",
-    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2070&auto=format&fit=crop",
+    image: "/uploads/ornek-gitar.png",
+  },
+  {
+    category: "Arşe",
+    description: "Kıl değişimi ve doğru gerginlik ayarıyla arşenin dengesi ve çalım hassasiyeti yeniden kazandırıldı.",
+    image: "/uploads/ornek-arse.jpg",
   },
 ]
 
@@ -35,7 +40,7 @@ export function WorkExamplesSection() {
         </div>
 
         {/* Examples Grid */}
-        <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {examples.map((example, index) => (
             <div
               key={index}

@@ -21,7 +21,7 @@ export function AboutSection() {
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2032&auto=format&fit=crop')`,
+                backgroundImage: `url('/uploads/about-atolye.png')`,
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent" />
@@ -30,7 +30,7 @@ export function AboutSection() {
           {/* Content */}
           <div className="flex flex-col gap-6">
             <h2 className="font-serif text-3xl font-semibold text-foreground md:text-4xl">
-              ES Atölye Hakkında
+              Lutier | Sonat Tufan
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
               ES Atölye, enstrüman bakım, onarım ve akort süreçlerine özenli ve dikkatli yaklaşan bir atölyedir. Piyano, yaylı enstrümanlar ve gitar gibi farklı yapıya sahip enstrümanlarda, her birinin ihtiyaç duyduğu teknik hassasiyet dikkate alınarak çalışılır. Buradaki yaklaşım yalnızca müdahale etmek değil; enstrümanın karakterini, kullanım konforunu ve güvenilirliğini koruyarak doğru sonucu sunmaktır.

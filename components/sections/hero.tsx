@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { PhotoUploadButton } from "@/components/photo-upload-button"
@@ -13,28 +14,52 @@ const heroSlides = [
       "ES Atölye olarak piyano, keman, viyola, viyolonsel ve gitar başta olmak üzere tüm enstrümanlarınız için profesyonel bakım, onarım ve tamir hizmeti sunuyoruz. Atölyemizde her enstrümana özenle yaklaşıyor, en doğru müdahaleyi uyguluyoruz.",
     image: "/uploads/hero-genel.jpg",
     alt: "ES Atölye dış görünüm",
+    tags: [
+      "Piyano bakım ve akort",
+      "Yaylı enstrüman onarım",
+      "Gitar bakım ve ayar",
+      "Gerçek atölye işçiliği",
+    ],
   },
   {
     title: "Arşe, Kıl Değişimi ve Tamiri",
     description:
-      "Yaylı çalgılarınızın vazgeçilmezi olan arşeleriniz için kıl değişimi, kamış ayarı ve genel bakım hizmetleri sunuyoruz. Doğru gerginlik ve dengeli kıl dağılımıyla arşenizin performansını en üst seviyeye çıkarıyoruz.",
+      "Arşeleriniz için kıl değişimi ve tamir hizmeti veriyoruz. Doğru gerginlik ve dengeli kıl dağılımıyla arşenizin performansını en üst seviyeye taşıyoruz.",
     image: "/uploads/hero-arse-kil-degisimi.jpg",
     alt: "Arşe kıl değişimi",
     imagePosition: "center 80%",
+    tags: [
+      "Arşe kıl değişimi",
+      "Arşe tamiri",
+      "Dengeli kıl dağılımı",
+      "Yaylı çalgı uzmanlığı",
+    ],
   },
   {
     title: "Gitar Tamiri, Onarım&Bakım",
     description:
-      "Klasik, akustik ve elektro gitarlarınız için perde düzenleme, eşik ayarı, sap düzeltme, elektronik bakım ve komple setup hizmetleri veriyoruz. Gitarınızın çalınabilirliğini ve ses kalitesini yeniden kazanmasını sağlıyoruz.",
+      "Klasik, akustik ve elektro gitarlarınız için perde düzenleme, perde değişimi, eşik ayarı, sap düzeltme, truss rod ayarı ve komple setup hizmetleri veriyoruz. Kırık sap onarımı, çatlak tamiri, açılmış birleşim noktalarının yeniden yapıştırılması ve cila rötuşlarıyla en zorlu hasarları bile özenle gideriyoruz. Elektronik bakım kapsamında manyetik değişimi, potansiyometre ve jack onarımı, kablo lehimleme ile gitarınızın sesini ve çalınabilirliğini ilk günkü haline kavuşturuyoruz.",
     image: "/uploads/hero-gitar-tamiri.jpg",
     alt: "Gitar tamiri ve onarım",
+    tags: [
+      "Perde düzenleme",
+      "Sap & çatlak onarımı",
+      "Elektronik bakım",
+      "Komple setup",
+    ],
   },
   {
-    title: "Piyano, Akort, Mekanik Tamir",
+    title: "Piyano, Akort, Mekanik Tamir ve Tel Değişimi",
     description:
-      "Akustik piyanolarınız için profesyonel akort, mekanik ayar, tuş regülasyonu ve ses düzenleme işlemlerini titizlikle gerçekleştiriyoruz. Piyanonuzun tonunu ve dokunuş hassasiyetini yeniden hayata döndürüyoruz.",
+      "Akustik piyanolarınız için profesyonel akort, mekanik ayar, tuş regülasyonu ve ses düzenleme işlemlerini titizlikle gerçekleştiriyoruz. Kopmuş veya yıpranmış tellerin değişimi, bas tellerde özel tel sarımı ve hassas tel takma işlemleriyle piyanonuzun ses dengesini en doğru şekilde yeniden kuruyoruz.",
     image: "/uploads/hero-piyano-akort.jpg",
     alt: "Piyano akort ve mekanik tamir",
+    tags: [
+      "Piyano akort",
+      "Mekanik ayar",
+      "Tuş regülasyonu",
+      "Tel değişimi",
+    ],
   },
   {
     title: "Tel Sarım ve Yedek Parça",
@@ -42,14 +67,13 @@ const heroSlides = [
       "Piyano tel sarımı, bas tel üretimi ve orijinal yedek parça temini konusunda hizmet veriyoruz. Kopmuş veya yıpranmış tellerin yenilenmesi, çekiç ve mekanik parça değişimleriyle piyanonuzun ömrünü uzatıyoruz.",
     image: "/uploads/hero-tel-sarim.jpg",
     alt: "Piyano tel sarım",
+    tags: [
+      "Bas tel sarımı",
+      "Orijinal yedek parça",
+      "Çekiç değişimi",
+      "Mekanik parça",
+    ],
   },
-]
-
-const serviceTags = [
-  "Piyano bakım ve akort",
-  "Yaylı enstrüman onarım",
-  "Gitar bakım ve ayar",
-  "Gerçek atölye işçiliği",
 ]
 
 export function HeroSection() {
@@ -91,15 +115,20 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <PhotoUploadButton size="lg" className="gap-2 bg-primary hover:bg-primary/90" label="Fotograf Gondererek Sor" />
-              <Button variant="outline" size="lg" className="gap-2 group">
-                Hizmetleri İncele
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild variant="outline" size="lg" className="gap-2 group">
+                <Link href="/hizmetler">
+                  Hizmetleri İncele
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
 
             {/* Service Tags */}
-            <div className="flex flex-wrap gap-2 pt-4">
-              {serviceTags.map((tag) => (
+            <div
+              key={`tags-${selectedIndex}`}
+              className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200 flex flex-wrap gap-2 pt-4"
+            >
+              {currentSlide.tags.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground"
