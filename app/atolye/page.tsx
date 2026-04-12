@@ -13,17 +13,17 @@ const timeline = [
   {
     year: "1996",
     title: "İlk müzik eğitimi",
-    description: "Emekli Devlet Opera ve Balesi trombon sanatçısı Abdullah Özkaya ile başladı; ardından Dz.K.K. Bando Komutanı Metin Tufan ile devam etti.",
+    description: "Emekli Devlet Opera ve Balesi trombon sanatçısı Abdullah Özkaya ile müzik eğitimine başladı; vefatının ardından Dz.K.K. Bando Komutanı Metin Tufan ile devam etti.",
   },
   {
     year: "2001",
     title: "Enstrüman bakım-onarım eğitimi",
-    description: "Dz.K.K. Bandosu Bakım Onarım Atölyesi'nde lüthiyer Cemal Köksal ile çalışmaya başladı.",
+    description: "Dz.K.K. Bandosu Bakım Onarım Atölyesi'nde lüthiyer Cemal Köksal'dan enstrüman bakım ve onarımı eğitimi almaya başladı.",
   },
   {
-    year: "2005",
+    year: "2005 – 2013",
     title: "Evrensel Müzikevi Onarım Atölyesi",
-    description: "Kenan Turgut ile keman, gitar ve elektronik piyano bakım-onarımı üzerine eğitim aldı.",
+    description: "Kenan Turgut ile keman, gitar ve elektronik piyano bakım-onarımı üzerine eğitim aldı; 2013 yılına kadar çalışmalarını sürdürdü.",
   },
   {
     year: "2009 – 2011",
@@ -33,7 +33,7 @@ const timeline = [
   {
     year: "İzmir dönemi",
     title: "Duran Gezen Atölyesi",
-    description: "Dokuz Eylül Konservatuvarı Piyano Bakım Onarım Bölümü öğretim görevlisi Duran Gezen'in atölyesinde çalıştı; vefatının ardından çalışmalarını sürdürdü. İsmet Tezcan ile klasik gitar eğitimine devam etti.",
+    description: "Dokuz Eylül Konservatuvarı öğretim görevlisi Duran Gezen'in atölyesinde çalıştı; vefatının ardından atölye çalışmalarını devam ettirdi. İsmet Tezcan ile klasik gitar eğitimine devam etti.",
   },
   {
     year: "2019 – 2022",
@@ -43,27 +43,27 @@ const timeline = [
   {
     year: "2022 – 2023",
     title: "MARYAS sertifikası",
-    description: "Mustafa Ceylan ve Prof. Mehmet Akbulut'tan piyano akordu, reglajı ve mekaniği üzerine ileri seviye eğitim aldı; Aydın Halk Eğitim Merkezi'nde gitar eğitimi sertifikası kazandı.",
+    description: "Mustafa Ceylan ve Prof. Mehmet Akbulut'tan piyano akordu, reglajı ve piyano mekaniği üzerine ileri seviye eğitim aldı; Aydın Halk Eğitim Merkezi'nde gitar eğitimi sertifikası kazandı.",
   },
   {
     year: "2024",
     title: "İzmir Devlet Opera ve Balesi",
-    description: "Açılan sınavı kazanarak sözleşmeli piyano akordörü ve lüthiyer olarak göreve başladı; lüthiyer Nurettin Temizer ile çalışmalarına devam etti.",
+    description: "Sözleşmeli piyano akordörü ve lüthiyer olarak çalışma hakkı elde etti; lüthiyer Nurettin Temizer ile yaylı çalgı yapım bölümünde çalışmalarına devam etti.",
   },
   {
-    year: "Bugün",
-    title: "ES Müzik Atölyesi",
-    description: "Yıllar içinde edindiği birikim, eğitim ve atölye tecrübesini kendi anlayışı doğrultusunda bir araya getirerek ES Müzik Atölyesi'ni kurdu.",
+    year: "2026",
+    title: "ES Müzik Atölyesi'nin kuruluşu",
+    description: "Şubat ayında İzmir Devlet Opera ve Balesi'nden ayrılarak ES Müzik Atölyesi'ni kurmaya başladı. Yılların birikimini kendi anlayışı doğrultusunda bir araya getirdi.",
   },
 ]
 
 const bioParagraphs = [
   "İlk müzik eğitimime 1996 yılında, emekli Devlet Opera ve Balesi trombon sanatçısı Abdullah Özkaya ile başladım. Abdullah Özkaya'nın vefatının ardından müzik ve trombon eğitimime, Dz.K.K. Bando Komutanı Metin Tufan ile devam ettim.",
-  "2001 yılından itibaren, Dz.K.K. Bandosu Bakım Onarım Atölyesi'nde görevli lüthiyer Cemal Köksal'dan enstrüman bakım ve onarımı üzerine eğitim almaya başladım. 2005 yılında Evrensel Müzikevi Onarım Atölyesi'nde Kenan Turgut ile çalışmalarıma devam ettim. Burada keman, gitar ve elektronik piyano bakım-onarımı üzerine eğitim aldım.",
+  "2001 yılından itibaren, Dz.K.K. Bandosu Bakım Onarım Atölyesi'nde görevli lüthiyer Cemal Köksal'dan enstrüman bakım ve onarımı üzerine eğitim almaya başladım. 2005 yılında Evrensel Müzikevi Onarım Atölyesi'nde Kenan Turgut ile çalışmalarıma devam ettim. Burada keman, gitar ve elektronik piyano bakım-onarımı üzerine eğitim aldım. 2013 yılına kadar çalışmaya devam ettim.",
   "2009–2011 yılları arasında, Gazi Üniversitesi Güzel Sanatlar Eğitimi Bölümü Müzik Eğitimi Anabilim Dalı Enstrüman Onarım ve Yapım Bölümü Başkanı Prof. Mehmet Akbulut ile akustik piyano akordu, reglajı ve tamiri üzerine çalışma fırsatı buldum. Aynı dönemde Bilkent Üniversitesi Sahne Sanatları Bölümü'nde Emre Ünlenen ile klasik gitar eğitimime devam ettim; bu süreçte Fame Müzik Dershanesi'nde gitar eğitmeni olarak görev aldım.",
   "Atölye ve eğitmenlik çalışmalarımı İzmir'e taşınıncaya kadar sürdürdüm. İzmir'de, Dokuz Eylül Konservatuvarı Piyano Bakım Onarım Bölümü öğretim görevlisi Duran Gezen'in atölyesinde çalışmaya başladım. Duran Gezen'in vefatının ardından atölye çalışmalarını devam ettirdim. Ayrıca Işılay Saygın Güzel Sanatlar Anadolu Lisesi öğretim görevlisi İsmet Tezcan ile klasik gitar eğitimime devam ettim.",
   "2019–2022 yılları arasında Bemol Müzikevi Atölyesi'nde enstrüman bakım ve onarımı alanında çalıştım. 2022–2023 yılları arasında MARYAS Piyano Atölyesi'nin açtığı eğitime katıldım; Mustafa Ceylan ve Prof. Mehmet Akbulut'tan piyano akordu, reglajı ve piyano mekaniği üzerine ileri seviye eğitim alarak sertifika kazandım. Bunun yanında Aydın Halk Eğitim Merkezi'nin düzenlediği gitar kurslarına katılarak gitar eğitimi sertifikası aldım.",
-  "Gezen Sanat Merkezi'nde müzik eğitmenliği ve lüthiyerlik çalışmalarımı sürdürürken, 2024 yılında İzmir Devlet Opera ve Balesi'nde açılan sınavı kazanarak sözleşmeli piyano akordörü ve lüthiyer olarak çalışma hakkı elde ettim. İzmir Devlet Opera ve Balesi yaylı çalgı yapım bölümünde görevli lüthiyer Nurettin Temizer ile çalışmalarıma devam ettim.",
+  "Gezen Sanat Merkezi'nde müzik eğitmenliği ve lüthiyerlik çalışmalarımı sürdürürken, 2024 yılında İzmir Devlet Opera ve Balesi'nde sözleşmeli piyano akordörü ve lüthiyer olarak çalışma hakkı elde ettim. İzmir Devlet Opera ve Balesi yaylı çalgı yapım bölümünde görevli lüthiyer Nurettin Temizer ile çalışmalarıma devam ettim. 2026 yılının şubat ayı itibarıyla ayrılarak ES Atölye'yi kurmaya başladım.",
   "Yıllar içinde edindiğim birikim, eğitim ve atölye tecrübemi kendi anlayışım doğrultusunda bir araya getirerek ES Müzik Atölyesi'ni kurdum. Bugün ES Müzik Atölyesi bünyesinde; piyano, gitar, yaylı çalgılar ve diğer enstrümanlarda bakım, onarım, akort ve teknik destek hizmetlerini, uzun yıllara dayanan deneyimle sürdürmeye devam ediyorum.",
 ]
 
@@ -135,7 +135,7 @@ export default function AtolyePage() {
                 Sonat Tufan
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                1996'dan bu yana müzik, enstrüman bakımı ve onarımı üzerine eğitim alarak; usta lüthiyerler ve akademik isimlerle çalışan, piyano, gitar ve yaylı çalgılarda uzmanlaşan bir lüthiyer.
+                1996'dan bu yana müzik, enstrüman bakımı ve onarımı üzerine eğitim alan; usta lüthiyerler ve akademisyenlerle çalışarak piyano, gitar ve yaylı çalgılarda uzmanlaşan bir lüthiyer ve ES Müzik Atölyesi'nin kurucusu.
               </p>
             </div>
           </div>
@@ -239,9 +239,9 @@ export default function AtolyePage() {
               </h2>
               <div className="mx-auto mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Yılların eğitim, atölye ve sahne tecrübesi tek bir çatı altında bir araya geldi.
-                  ES Müzik Atölyesi; piyano, gitar, yaylı çalgılar ve diğer enstrümanlarda bakım,
-                  onarım, akort ve teknik destek hizmetlerini deneyime dayalı bir anlayışla sürdürür.
+                  30 yıla yakın eğitim, atölye ve sahne tecrübesi tek bir çatı altında bir araya geldi.
+                  2026 yılında kurulan ES Müzik Atölyesi; piyano, gitar, yaylı çalgılar ve diğer enstrümanlarda
+                  bakım, onarım, akort ve teknik destek hizmetlerini uzun yıllara dayanan deneyimle sürdürür.
                 </p>
                 <p>
                   Her enstrümanın kendine özgü yapısı ve karakteri vardır. Atölyede bu farklılıklar
