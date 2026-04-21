@@ -40,7 +40,7 @@ const services = [
     details: [
       "Köprü ayarı ve değişimi",
       "Eşik kontrolü ve bakımı",
-      "Ses direği ayarı",
+      "Can direği ayarı",
       "Burgu değişimi ve ayarı",
       "Tel değişimi ve düzeni",
       "Gövde çatlak onarımı",
