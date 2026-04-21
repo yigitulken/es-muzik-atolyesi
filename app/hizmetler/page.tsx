@@ -4,10 +4,44 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Music, Guitar, Piano, Music2, ArrowRight, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
+import { JsonLd } from "@/components/json-ld"
+import { servicesSchema, breadcrumbSchema } from "@/lib/seo/schemas"
 
-export const metadata = {
-  title: "Hizmetler | ES Müzik Atölyesi",
-  description: "Piyano akort ve mekanik tamir, yaylı çalgı onarımı, arşe kıl değişimi, gitar bakım ve onarım hizmetleri. Her enstrümana özel teknik yaklaşım.",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Hizmetler — Piyano Akort, Yaylı Onarım, Arşe Kıl, Gitar Bakım",
+  description:
+    "İzmir'de piyano akortu ve mekanik tamir, keman-viyola-viyolonsel onarımı, arşe kıl değişimi, gitar bakım ve setup hizmetleri. Her enstrümana özel teknik yaklaşım.",
+  keywords: [
+    "piyano akort",
+    "piyano mekanik tamir",
+    "piyano tel değişimi",
+    "keman onarımı",
+    "viyola tamiri",
+    "viyolonsel onarımı",
+    "arşe kıl değişimi",
+    "gitar setup",
+    "gitar bakım onarım",
+    "elektro gitar ayarı",
+    "truss rod ayarı",
+    "entonasyon",
+  ],
+  alternates: {
+    canonical: "/hizmetler",
+  },
+  openGraph: {
+    title: "Hizmetler | ES Müzik Atölyesi",
+    description:
+      "Piyano akort ve mekanik tamir, yaylı çalgı onarımı, arşe kıl değişimi, gitar bakım. İzmir Konak.",
+    url: "/hizmetler",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hizmetler | ES Müzik Atölyesi",
+    description: "Piyano, yaylı ve gitar için bakım, onarım ve akort hizmetleri.",
+  },
 }
 
 const services = [
@@ -108,9 +142,49 @@ const additionalServices = [
   },
 ]
 
+const serviceSchemaItems = [
+  {
+    name: "Piyano Akort, Mekanik Tamir ve Tel Değişimi",
+    description:
+      "Akustik piyanolar için profesyonel akort, mekanik ayar, tuş regülasyonu, ton dengeleme, kopmuş tel değişimi ve bas tellerde özel tel sarımı.",
+    type: "Piyano bakım ve onarım",
+    slug: "piyano",
+  },
+  {
+    name: "Keman, Viyola ve Viyolonsel Onarımı",
+    description:
+      "Yaylı çalgılar için köprü ayarı, eşik kontrolü, can direği ayarı, burgu ve tel düzeni, gövde çatlak onarımı.",
+    type: "Yaylı çalgı bakım ve onarım",
+    slug: "yayli",
+  },
+  {
+    name: "Arşe Kıl Değişimi ve Tamiri",
+    description:
+      "Arşeler için kıl değişimi, doğru gerginlik ayarı, dengeli kıl dağılımı ve kırık arşe onarımı.",
+    type: "Arşe bakım",
+    slug: "arse",
+  },
+  {
+    name: "Gitar Tamiri, Onarım ve Setup",
+    description:
+      "Klasik, akustik ve elektro gitarlar için fret tesviyesi, truss rod ayarı, entonasyon, kırık sap onarımı, elektronik bakım ve komple setup.",
+    type: "Gitar bakım ve onarım",
+    slug: "gitar",
+  },
+]
+
 export default function HizmetlerPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          ...servicesSchema(serviceSchemaItems),
+          breadcrumbSchema([
+            { name: "Ana Sayfa", path: "/" },
+            { name: "Hizmetler", path: "/hizmetler" },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         {/* Hero Section */}

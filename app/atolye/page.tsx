@@ -3,10 +3,39 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Heart, Eye, Target, Shield, MessageSquare, Wrench } from "lucide-react"
 import Link from "next/link"
+import { JsonLd } from "@/components/json-ld"
+import { personSchema, breadcrumbSchema } from "@/lib/seo/schemas"
 
-export const metadata = {
-  title: "Atölye | ES Müzik Atölyesi",
-  description: "Lüthiyer Sonat Tufan'ın eğitim yolculuğu ve ES Müzik Atölyesi hakkında. Piyano, yaylı çalgılar ve gitar için özenli bakım, onarım ve akort hizmetleri.",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Atölye — Lüthiyer Sonat Tufan ve ES Müzik Atölyesi Hakkında",
+  description:
+    "Lüthiyer Sonat Tufan'ın eğitim yolculuğu ve 2026'da kurulan ES Müzik Atölyesi hakkında. Piyano, yaylı çalgılar ve gitar için özenli bakım, onarım ve akort.",
+  keywords: [
+    "Sonat Tufan",
+    "lüthiyer izmir",
+    "müzik atölyesi izmir",
+    "ES Müzik Atölyesi",
+    "enstrüman bakım ustası",
+    "piyano ustası izmir",
+    "keman ustası",
+  ],
+  alternates: {
+    canonical: "/atolye",
+  },
+  openGraph: {
+    title: "Atölye Hakkında | ES Müzik Atölyesi",
+    description:
+      "Lüthiyer Sonat Tufan yönetiminde İzmir Konak'ta kurulan ES Müzik Atölyesi. Eğitim yolculuğu ve uzmanlık alanları.",
+    url: "/atolye",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Atölye Hakkında | ES Müzik Atölyesi",
+    description: "Lüthiyer Sonat Tufan ve ES Müzik Atölyesi hakkında.",
+  },
 }
 
 const timeline = [
@@ -122,6 +151,15 @@ const approach = [
 export default function AtolyePage() {
   return (
     <>
+      <JsonLd
+        data={[
+          personSchema(),
+          breadcrumbSchema([
+            { name: "Ana Sayfa", path: "/" },
+            { name: "Atölye", path: "/atolye" },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         {/* Hero Section */}

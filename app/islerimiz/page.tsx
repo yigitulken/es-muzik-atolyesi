@@ -4,15 +4,52 @@ import { Button } from "@/components/ui/button"
 import { PhotoUploadButton } from "@/components/photo-upload-button"
 import { WorksFilterGrid } from "@/components/works-filter-grid"
 import Link from "next/link"
+import { JsonLd } from "@/components/json-ld"
+import { itemListSchema, breadcrumbSchema } from "@/lib/seo/schemas"
+import { works } from "@/lib/works"
 
-export const metadata = {
-  title: "İşlerimiz | ES Atölye",
-  description: "ES Atölye'den örnek işler. Piyano, yaylı enstrüman ve gitar bakım, onarım ve ayar örnekleri.",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "İşlerimiz — Piyano, Yaylı ve Gitar Onarım Örnekleri",
+  description:
+    "ES Müzik Atölyesi'nde yapılan piyano akort ve mekanik onarım, yaylı köprü ayarı, arşe kıl değişimi, gitar kırık tamiri ve köprü onarımı örnekleri.",
+  keywords: [
+    "piyano onarım örnekleri",
+    "keman tamiri örnekleri",
+    "gitar tamiri örnek",
+    "enstrüman onarım portfolyo",
+    "arşe kıl değişimi örnek",
+  ],
+  alternates: {
+    canonical: "/islerimiz",
+  },
+  openGraph: {
+    title: "İşlerimiz | ES Müzik Atölyesi",
+    description:
+      "Piyano, yaylı enstrüman ve gitar üzerinde yapılmış bakım, onarım ve ayar örnekleri.",
+    url: "/islerimiz",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "İşlerimiz | ES Müzik Atölyesi",
+    description: "Enstrüman bakım ve onarım örneklerimiz.",
+  },
 }
 
 export default function IslerimizPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          itemListSchema(works),
+          breadcrumbSchema([
+            { name: "Ana Sayfa", path: "/" },
+            { name: "İşlerimiz", path: "/islerimiz" },
+          ]),
+        ]}
+      />
       <Header />
       <main>
         {/* Hero Section */}

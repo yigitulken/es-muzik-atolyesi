@@ -8,12 +8,20 @@ import { ProcessSection } from "@/components/sections/process"
 import { WorkExamplesSection } from "@/components/sections/work-examples"
 import { AboutSection } from "@/components/sections/about"
 import { WhyUsSection } from "@/components/sections/why-us"
-
 import { FinalCTASection } from "@/components/sections/final-cta"
+import { JsonLd } from "@/components/json-ld"
+import {
+  localBusinessSchema,
+  organizationSchema,
+  websiteSchema,
+} from "@/lib/seo/schemas"
 
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd
+        data={[organizationSchema(), websiteSchema(), localBusinessSchema()]}
+      />
       <Header />
       <main className="flex-1">
         <HeroSection />
